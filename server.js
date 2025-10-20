@@ -68,6 +68,17 @@ app.get('/health', (req, res) => {
     });
 });
 
+// API info endpoint
+app.get('/api/info', async (req, res) => {
+    res.json({
+            name: 'Task Management API',
+            version: '1.0.0',
+            description: 'A REST API for managing tasks with user authentication, built with Node.js, Express, and SQLite.',
+            database: dbStatus,
+            environment: process.env.NODE_ENV
+         });
+});
+
 // Root endpoint
 app.get('/', (req, res) => {
     res.json({
